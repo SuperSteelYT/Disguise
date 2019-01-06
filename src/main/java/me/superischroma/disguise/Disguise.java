@@ -2,9 +2,11 @@ package me.superischroma.disguise;
 
 import me.superischroma.disguise.nickname.NickCommand;
 import me.superischroma.disguise.nickname.NickManager;
+import me.superischroma.disguise.nickname.Nicks;
 import me.superischroma.disguise.vanish.VanishManager;
 import me.superischroma.disguise.util.Log;
 import me.superischroma.disguise.vanish.VanishCommand;
+import me.superischroma.disguise.vanish.Vanished;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,6 +19,9 @@ public class Disguise extends JavaPlugin
     {
         return instance;
     }
+    
+    private static Vanished vanished = Vanished.getConfig();
+    private static Nicks nicks = Nicks.getConfig();
     
     @Override
     public void onEnable()
@@ -55,5 +60,9 @@ public class Disguise extends JavaPlugin
     {
         getConfig().options().copyDefaults(true);
         saveConfig();
+        nicks.options().copyDefaults(true);
+        nicks.save();
+        vanished.options().copyDefaults(true);
+        vanished.save();
     }
 }

@@ -38,6 +38,7 @@ public class VanishManager implements Listener
         }
         Bukkit.broadcastMessage(Util.getLogoutMessage(player));
         vanished.set(path + ".name", player.getName());
+        vanished.save();
         Log.info(player.getName() + " has vanished.");
     }
     
@@ -54,6 +55,7 @@ public class VanishManager implements Listener
         }
         Bukkit.broadcastMessage(Util.getLoginMessage(player));
         vanished.set(path, null);
+        vanished.save();
         Log.info(player.getName() + " has unvanished.");
     }
     
