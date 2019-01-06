@@ -20,9 +20,6 @@ public class Disguise extends JavaPlugin
         return instance;
     }
     
-    private static Vanished vanished = Vanished.getConfig();
-    private static Nicks nicks = Nicks.getConfig();
-    
     @Override
     public void onEnable()
     {
@@ -60,8 +57,10 @@ public class Disguise extends JavaPlugin
     {
         getConfig().options().copyDefaults(true);
         saveConfig();
+        Nicks nicks = Nicks.getConfig();
         nicks.options().copyDefaults(true);
         nicks.save();
+        Vanished vanished = Vanished.getConfig();
         vanished.options().copyDefaults(true);
         vanished.save();
     }
