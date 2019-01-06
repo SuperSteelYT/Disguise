@@ -11,3 +11,7 @@ commands:
         description: Disguise yourself as another player.
         usage: /<command> [nick | off]
         aliases: [dnick]
+    disguisevanish:
+        description: Hide yourself from the rest of the server.
+        usage: /<command>
+        aliases: [dvanish,dv]

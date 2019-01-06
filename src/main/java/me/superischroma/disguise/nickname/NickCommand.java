@@ -17,6 +17,11 @@ public class NickCommand implements CommandExecutor
             sender.sendMessage(ChatColor.RED + "Only in-game users are allowed to execute this command!");
             return true;
         }
+        if (!sender.isOp())
+        {
+            sender.sendMessage(ChatColor.RED + "No permission.");
+            return true;
+        }
         if (args.length > 1 || args.length < 1)
         {
             return false;
@@ -38,7 +43,6 @@ public class NickCommand implements CommandExecutor
         }
         String nick = args[0];
         nick = Util.colorize(nick);
-        NickManager.unnick(playerSender);
         NickManager.nick(playerSender, nick);
         sender.sendMessage(ChatColor.GRAY + "Your nick has now been set to \"" + nick + ChatColor.GRAY + "\"");
         return true;
