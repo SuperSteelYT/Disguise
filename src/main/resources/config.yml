@@ -1,0 +1,16 @@
+#
+# Disguise - Main Configuration
+#
+
+# Server-related Config
+server:
+    # Fill in the name of your server
+    name: Server
+    # Fill in the chat format that your server is using
+    # Use %msg% for the chat message, use %display% for the display name of the player
+    chat_format: '&r<%display%&r> %msg%'
+    # Fill in the login format that your server is using
+    # Use %name% for the name of the player
+    login_format: '&e%name% joined the game'
+    # Same for logout
+    logout_format: '&e%name% left the game'

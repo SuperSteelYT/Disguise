@@ -1,0 +1,13 @@
+#
+# Disguise - Plugin Configuration
+#
+
+name: Disguise
+author: [Super_]
+main: me.superischroma.disguise.Disguise
+version: 0.1
+commands:
+    disguisenick:
+        description: Disguise yourself as another player.
+        usage: /<command> [nick | off]
+        aliases: [dnick]
